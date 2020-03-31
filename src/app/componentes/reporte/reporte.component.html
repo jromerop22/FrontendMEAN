@@ -1,0 +1,180 @@
+<div class="container">
+  <!-- <form action="" #reporteForm="ngForm" (ngSubmit)=""> -->
+  <div class="d-flex w-100 justify-content-center alig-self-center">
+    <form
+      action=""
+      #reporteForm="ngForm"
+      class="border border-secondary shadow p-3 mt-5 rounded"
+      (ngSubmit)="onSubmit(reporteForm)"
+    >
+      <h1 class="mb-5">Formulario Reportes</h1>
+      <!-- Datos Basicos -->
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="documento">Documento:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="documento"
+              name="documento"
+              #documento="ngModel"
+              [(ngModel)]="report.documento"
+              required
+            />
+            <small *ngIf="!documento.valid && documento.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+          <div class="col">
+            <label for="nombres">Nombres:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombres"
+              name="nombres"
+              #nombres="ngModel"
+              [(ngModel)]="report.nombre"
+              required
+            />
+            <small *ngIf="!nombres.valid && nombres.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+          <div class="col">
+            <label for="apellidos">Apellidos:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidos"
+              name="apellidos"
+              #apellidos="ngModel"
+              [(ngModel)]="report.apellido"
+              required
+            />
+            <small *ngIf="!apellidos.valid && apellidos.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+        </div>
+      </div>
+      <!-- Datos Turno -->
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="dateBegin">Fecha inicio:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="datebegin"
+              name="datebegin"
+              #datebegin="ngModel"
+              [(ngModel)]="report.fechaInicio"
+              required
+            />
+            <small *ngIf="!datebegin.valid && datebegin.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+          <div class="col">
+            <label for="dateEnd">Fecha fin:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="dateEnd"
+              name="dateEnd"
+              #dateEnd="ngModel"
+              [(ngModel)]="report.fechaFin"
+              required
+            />
+            <small *ngIf="!dateEnd.valid && dateEnd.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+          <div class="col">
+            <label for="turnoInicio">Turno inicio:</label>
+            <input
+              type="time"
+              class="form-control"
+              id="turnoInicio"
+              name="turnoInicio"
+              #turnoInicio="ngModel"
+              [(ngModel)]="report.turnoInicio"
+              required
+            />
+            <small *ngIf="!turnoInicio.valid && turnoInicio.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+          <div class="col">
+            <label for="turnoFin">Turno Fin:</label>
+            <input
+              type="time"
+              class="form-control"
+              id="turnoFin"
+              name="turnoFin"
+              #turnoFin="ngModel"
+              [(ngModel)]="report.turnoFin"
+              required
+            />
+            <small *ngIf="!turnoFin.valid && turnoFin.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+        </div>
+      </div>
+      <!-- datos Horario -->
+      <div class="form-group mb-5">
+        <div class="row">
+          <div class="col">
+            <label for="hourBegin">Hora Extra Inicio:</label>
+            <input
+              type="time"
+              class="form-control"
+              id="hourBegin"
+              name="hourBegin"
+              #hourBegin="ngModel"
+              [(ngModel)]="report.horaExtraInicio"
+              required
+            />
+            <small *ngIf="!hourBegin.valid && hourBegin.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+          <div class="col">
+            <label for="hourEnd">Hora Extra Fin:</label>
+            <input
+              type="time"
+              class="form-control"
+              id="hourEnd"
+              name="hourEnd"
+              #hourEnd="ngModel"
+              [(ngModel)]="report.horaExtraFin"
+              required
+            />
+            <small *ngIf="!hourEnd.valid && hourEnd.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+          <div class="col">
+            <label for="extra">Motivo Extra:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="extra"
+              name="extra"
+              #extra="ngModel"
+              [(ngModel)]="report.horaExtraMotivo"
+              placeholder="Descripcion"
+              required
+            />
+            <small *ngIf="!extra.valid && extra.touched" class="invalid-feedback d-block font-weight-bold">
+                invalido
+            </small>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success btn-block">Registro</button>
+    </form>
+  </div>
+</div>
