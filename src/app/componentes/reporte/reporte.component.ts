@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HorasModule } from '../../modelos/horas/horas.module';
-import { from } from 'rxjs';
+import { ReporteService } from '../../servicios/reporte.service';
 @Component({
   selector: 'app-reporte',
   templateUrl: './reporte.component.html',
@@ -9,7 +9,7 @@ import { from } from 'rxjs';
 export class ReporteComponent implements OnInit {
   public report : HorasModule;
 
-  constructor() { 
+  constructor(private reporteSevice: ReporteService) { 
     this.report = new HorasModule('','','','','','','','','','');
   }
 
@@ -17,7 +17,15 @@ export class ReporteComponent implements OnInit {
   }
 
   onSubmit(Form){
-    console.log(this.report);
+    this.reporteSevice.ingresar(this.report).subscribe(
+      Response=>{
+        this.report = Response;
+        console.log(this.report);
+      },
+      Error=>{
+        console.log(Error);
+      }
+    )
   }
 
 }

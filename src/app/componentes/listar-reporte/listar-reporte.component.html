@@ -1,0 +1,50 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Documento</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">fechaInicio</th>
+      <th scope="col">fechaFin</th>
+      <th scope="col">turnoInicio</th>
+      <th scope="col">turnoFin</th>
+      <th scope="col">horaExtraInicio</th>
+      <th scope="col">horaExtraFin</th>
+      <th scope="col">horaExtraMotivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let temps of temp">
+      <td>
+        {{ temps.documento }}
+      </td>
+      <td>
+        {{ temps.nombre }}
+      </td>
+      <td>
+        {{ temps.apellido }}
+      </td>
+      <td>
+        {{ temps.fechaInicio }}
+      </td>
+      <td>
+        {{ temps.fechaFin }}
+      </td>
+      <td>
+        {{ temps.turnoInicio }}
+      </td>
+      <td>
+        {{ temps.turnoFin }}
+      </td>
+      <td>
+        {{ temps.horaExtraInicio }}
+      </td>
+      <td>
+        {{ temps.horaExtraFin }}
+      </td>
+      <td>
+        {{ temps.horaExtraMotivo }}
+      </td>
+    </tr>
+  </tbody>
+</table>

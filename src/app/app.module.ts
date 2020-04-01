@@ -9,12 +9,14 @@ import { ReporteComponent } from './componentes/reporte/reporte.component';
 
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListarReporteComponent } from './componentes/listar-reporte/listar-reporte.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReporteComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ListarReporteComponent
   ],
   imports: [
     BrowserModule,

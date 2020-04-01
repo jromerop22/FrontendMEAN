@@ -11,7 +11,8 @@ export class UsuarioComponent implements OnInit {
   public cliente: User[];
   currentPage = 1;
   itemsPerPage = 3;
-  pageSize: number;  
+  pageSize: number;   
+  longitud : number;
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -31,12 +32,22 @@ export class UsuarioComponent implements OnInit {
      this.usuarioService.obtener().subscribe(
         Response=>{
           this.cliente = Response;
+          this.longitud = this.cliente.length;
           console.log(this.cliente);
+          this.usuarioService.ingresar(this.cliente).subscribe(
+            Response=>{              
+              console.log("ok",Response);
+            },
+            Error=>{
+              console.log("error");
+            }
+          );
         },
         Error=>{
           console.log("error");
         }
       );
+       
   }
 
 }

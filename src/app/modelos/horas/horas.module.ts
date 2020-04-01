@@ -9,6 +9,6 @@ export class HorasModule {
     public turnoFin : string,
     public horaExtraInicio : string,
     public horaExtraFin : string,
-    public horaExtraMotivo : string,
+    public horaExtraMotivo : string
   ){}
  }
